@@ -17,6 +17,8 @@ namespace HashTableAndBST
         {
             return root;
         }
+
+        //CREATE AND INSERT 
         public void Insert(int id)
         {
             Node node = new Node(id);
@@ -51,6 +53,7 @@ namespace HashTableAndBST
             }
         }
 
+        //DISPLAY
         public void Display(Node root)
         {
             if (root != null)
@@ -58,6 +61,23 @@ namespace HashTableAndBST
                 Console.WriteLine(root.item + " | ");
                 Display(root.leftCount);
                 Display(root.rightCount);
+            }
+        }
+
+        //SIZE
+        public int size()
+        {
+            return size(root);
+        }
+        public int size(Node node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return (size(node.leftCount) + 1 + size(node.rightCount));
             }
         }
     }
